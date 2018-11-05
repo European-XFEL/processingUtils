@@ -1,0 +1,6 @@
+build/
+dist/
+.idea/
+src/processing_utils.egg-info/
+src/processing_utils/__pycache__/
+src/processing_utils/tests/__pycache__/
