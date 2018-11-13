@@ -1,8 +1,8 @@
 import time
 
 
-class FrameRate:
-    """Class to easily calculate frame rate"""
+class RateCalculator:
+    """Class to easily calculate (e.g.) frame rate"""
     def __init__(self, type='input', refresh_interval=1.0):
         self.counter = 0
         self.lastTime = time.time()
