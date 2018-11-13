@@ -2,11 +2,11 @@ import unittest
 
 from time import sleep
 
-from ..frame_rate import FrameRate
+from ..rate_calculator import RateCalculator
 
 
-class FrameRate_TestCase(unittest.TestCase):
-    frameRate = FrameRate(refresh_interval=1.0)
+class RateCalculator_TestCase(unittest.TestCase):
+    frameRate = RateCalculator(refresh_interval=1.0)
 
     def test_init(self):
         self.assertEqual(self.frameRate.rate(), 0.)
