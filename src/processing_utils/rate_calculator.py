@@ -4,7 +4,7 @@ class RateCalculator(ImageStatsCalculator):
     """Class to easily calculate (e.g.) frame rate"""
 
     def update(self):
-        """increments counter"""
+        """Increments counter"""
         self.counter += 1
 
     def rate(self):
