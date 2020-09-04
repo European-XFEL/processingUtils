@@ -28,7 +28,7 @@ class ImageStatsCalculator:
         self.lastTime = time.time()
 
     def get_average_value(self):
-        if self.sum_value > 0:
+        if self.counter > 0:
             return self.sum_value / self.counter
         else:
             return 0.
