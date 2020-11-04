@@ -33,11 +33,19 @@ class ImageStatsCalculator:
         else:
             return 0.
 
-    def refresh(self):
+    def get_time_average(self):
+        return self.sum_value / self.elapsedTime()
+
+    def refresh(self, do_time_average=False):
         """If refresh interval has elapsed, it resets sum_value and elapsed
-        time, and returns the averaged value. Otherwise, it returns None"""
+        time, and returns the averaged value. Otherwise, it returns None.
+        If do_time_average is set to True, the time average is returned.
+        """
         val = None
         if self.elapsedTime() >= self.refresh_interval:
-            val = self.get_average_value()
+            if do_time_average:
+                val = self.get_time_average()
+            else:
+                val = self.get_average_value()
             self.reset()
         return val

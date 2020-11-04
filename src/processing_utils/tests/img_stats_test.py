@@ -2,7 +2,7 @@ import unittest
 
 import random
 
-from time import sleep
+from time import sleep, time
 
 from ..image_stats_calculator import ImageStatsCalculator
 
@@ -48,6 +48,21 @@ class ImageStatsCalculator_TestCase(unittest.TestCase):
             self.statParameter.update(random.random())
         val = self.statParameter.refresh()
         self.assertAlmostEqual(val, 0.5, delta=0.05)
+
+    def test_time_average(self):
+        val = 3
+        counts = 100
+        expected_total = val * counts
+        self.statParameter.reset()
+
+        t0 = time()
+        for _ in range(counts):
+            sleep(1.6 / counts)
+            self.statParameter.update(val)
+        t1 = time()
+        time_avg_val = self.statParameter.refresh(True)
+        self.assertAlmostEqual(time_avg_val, expected_total/(t1 - t0),
+                               delta=0.05)
 
 
 if __name__ == '__main__':
