@@ -1,10 +1,12 @@
 import time
 
+
 class ImageStatsCalculator:
     """
     Utility to calculate average of any image related parameter, and throttle
     its refresh to the desired interval
     """
+
     def __init__(self, type='input', refresh_interval=1.0):
         self.sum_value = 0
         self.counter = 0
