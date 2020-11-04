@@ -16,7 +16,8 @@ class ImageStatsCalculator_TestCase(unittest.TestCase):
     def test_elapsed_time(self):
         self.statParameter.reset()
         sleep(1.0)
-        self.assertAlmostEqual(self.statParameter.elapsedTime(), 1.0, delta=0.01)
+        self.assertAlmostEqual(self.statParameter.elapsedTime(), 1.0,
+                               delta=0.01)
 
     def test_reset(self):
         counts = 100
@@ -61,7 +62,7 @@ class ImageStatsCalculator_TestCase(unittest.TestCase):
             self.statParameter.update(val)
         t1 = time()
         time_avg_val = self.statParameter.refresh(True)
-        self.assertAlmostEqual(time_avg_val, expected_total/(t1 - t0),
+        self.assertAlmostEqual(time_avg_val, expected_total / (t1 - t0),
                                delta=0.05)
 
 

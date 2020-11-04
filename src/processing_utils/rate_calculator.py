@@ -1,5 +1,6 @@
 from .image_stats_calculator import ImageStatsCalculator
 
+
 class RateCalculator(ImageStatsCalculator):
     """Class to easily calculate (e.g.) frame rate"""
 
