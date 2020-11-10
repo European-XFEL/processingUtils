@@ -17,21 +17,21 @@ class CameraImageRotation_TestCase(unittest.TestCase):
         ]
 
         triangle_90 = [
-            (1, 9),
-            (5, 9),
-            (5, 7)
+            (1, 10),
+            (5, 10),
+            (5, 8)
         ]
 
         triangle_180 = [
-            (9, 7),
-            (9, 3),
-            (7, 3)
+            (10, 8),
+            (10, 4),
+            (8, 4)
         ]
 
         triangle_270 = [
-            (7, 1),
-            (3, 1),
-            (3, 3)
+            (8, 1),
+            (4, 1),
+            (4, 3)
         ]
 
         for rotation, expected in [(90, triangle_90),
@@ -46,9 +46,9 @@ class CameraImageRotation_TestCase(unittest.TestCase):
 
     def test_rotate_roi(self):
         roi = {'x': 2, 'y': 1, 'width': 5, 'height': 4}
-        roi_90 = {'x': 1, 'y': 3, 'width': 4, 'height': 5}
-        roi_180 = {'x': 3, 'y': 3, 'width': 5, 'height': 4}
-        roi_270 = {'x': 3, 'y': 2, 'width': 4, 'height': 5}
+        roi_90 = {'x': 1, 'y': 5, 'width': 4, 'height': 5}
+        roi_180 = {'x': 5, 'y': 5, 'width': 5, 'height': 4}
+        roi_270 = {'x': 5, 'y': 2, 'width': 4, 'height': 5}
 
         for rotation, expected in [(90, roi_90),
                                    (180, roi_180),
