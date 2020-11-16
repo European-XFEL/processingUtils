@@ -22,12 +22,12 @@ def rotate_coordinates_on_ccd(x_in, y_in, rot, ccd_width, ccd_height):
         y_out = y_in
     elif rot_right_angles == 1:
         x_out = y_in
-        y_out = ccd_width - x_in
+        y_out = ccd_width + 1 - x_in
     elif rot_right_angles == 2:
-        x_out = ccd_width - x_in
-        y_out = ccd_height - y_in
+        x_out = ccd_width + 1- x_in
+        y_out = ccd_height + 1 - y_in
     elif rot_right_angles == 3:
-        x_out = ccd_height - y_in
+        x_out = ccd_height + 1 - y_in
         y_out = x_in
     else:
         raise RuntimeError  # that's a bug
@@ -50,8 +50,8 @@ def rotate_roi(roi_topleft_x, roi_topleft_y, roi_width, roi_height, rot,
     :return: topleft X, topleft Y, width and heigh of the ROI in the rotated
         coordinates system
     """
-    roi_bottomright_x = roi_topleft_x + roi_width
-    roi_bottomright_y = roi_topleft_y + roi_height
+    roi_bottomright_x = roi_topleft_x + roi_width - 1
+    roi_bottomright_y = roi_topleft_y + roi_height - 1
 
     x1, y1 = rotate_coordinates_on_ccd(roi_topleft_x, roi_topleft_y,
                                        rot, ccd_width, ccd_height)
@@ -60,6 +60,6 @@ def rotate_roi(roi_topleft_x, roi_topleft_y, roi_width, roi_height, rot,
 
     roi_out_x = min(x1, x2)
     roi_out_y = min(y1, y2)
-    roi_out_width = abs(x2 - x1)
-    roi_out_height = abs(y2 - y1)
+    roi_out_width = abs(x2 - x1) + 1
+    roi_out_height = abs(y2 - y1) + 1
     return roi_out_x, roi_out_y, roi_out_width, roi_out_height
