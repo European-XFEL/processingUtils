@@ -16,9 +16,8 @@ class MovingAverage():
            n_of_vals is the number of values it is calculated on
     """
 
-    def __init__(self, windowSize):
-        self.windowSize = windowSize
-        self.window = deque(maxlen=int(windowSize))
+    def __init__(self, window_size):
+        self.window = deque(maxlen=int(window_size))
         self.avg = 0
 
     def __call__(self, value):

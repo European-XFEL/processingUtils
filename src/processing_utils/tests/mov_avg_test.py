@@ -1,9 +1,5 @@
 import unittest
 
-import random
-
-from time import sleep, time
-
 from ..moving_average import MovingAverage
 
 AVG_N = 10
@@ -22,7 +18,10 @@ class ImageStatsCalculator_TestCase(unittest.TestCase):
                 self.assertEqual(val, sum / i)
                 self.assertEqual(n, i)
             elif i <= AVG_N + 10:
-                sum = sum + i - (i - AVG_N)
+                # add i to the sum and subtract (i - AVG_N)
+                # i.e. sum + i - (i - AVG_N)
+                sum = sum + AVG_N
+
                 val, n = self.mov_avg(i)
                 self.assertEqual(val, sum / AVG_N)
                 self.assertEqual(n, 10)
