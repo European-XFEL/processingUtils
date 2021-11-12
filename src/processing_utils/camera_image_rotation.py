@@ -24,7 +24,7 @@ def rotate_coordinates_on_ccd(x_in, y_in, rot, ccd_width, ccd_height):
         x_out = y_in
         y_out = ccd_width + 1 - x_in
     elif rot_right_angles == 2:
-        x_out = ccd_width + 1- x_in
+        x_out = ccd_width + 1 - x_in
         y_out = ccd_height + 1 - y_in
     elif rot_right_angles == 3:
         x_out = ccd_height + 1 - y_in

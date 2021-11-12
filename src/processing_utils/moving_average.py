@@ -1,5 +1,6 @@
 from collections import deque
 
+
 class MovingAverage():
     """
     Utility for moving average calculation.
@@ -9,7 +10,7 @@ class MovingAverage():
         mov_avg = MovingAverage(N)
 
     Feeding a value:
-        avg, n = mov_avg(a_value)
+        avg, n_of_vals = mov_avg(a_value)
 
            avg is the current average value,
            n_of_vals is the number of values it is calculated on
