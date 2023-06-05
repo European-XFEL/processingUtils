@@ -1,5 +1,4 @@
 import unittest
-
 from time import sleep
 
 from ..rate_calculator import RateCalculator
