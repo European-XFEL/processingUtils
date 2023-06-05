@@ -1,7 +1,5 @@
-import unittest
-
 import random
-
+import unittest
 from time import sleep, time
 
 from ..image_stats_calculator import ImageStatsCalculator
